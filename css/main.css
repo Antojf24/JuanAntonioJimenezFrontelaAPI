@@ -1,0 +1,94 @@
+.selector{
+    background-color: #84728d;
+    margin-right: 30px;
+    width: 100vw;
+    height: 130px;
+    padding-left: 10px;
+    position: sticky;
+    top: 60px;
+    z-index: 10;
+}
+
+.selectores{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.tituloSelector{
+    color: #f8f9f8;
+    font-size: x-large;
+}
+
+.opcion{
+    background: transparent;
+    border: none;
+    display: block;
+    font-size: 15px;
+    color: #f8f9f8;
+    outline: none;
+    position: relative;
+    transition: 0.3s;
+    padding: 10px;
+}
+
+.opcion::before{
+    content: '';
+    border-bottom: 2px solid #f8f9f8;
+    padding: 0 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 0;
+    transition: 0.3s;
+}
+
+.opcion:hover:before{
+    width: 100%;
+    padding: 0;
+}
+
+.contenido{
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;  
+}
+
+.carta{
+    height: 250px;
+    width: 400px;
+    background-color: #e9ddef;
+    border: 2px solid black;
+    border-radius: 5px;
+    display: block;
+    padding: 5px;
+}
+
+.titulo-carta{
+    border-bottom: 2px solid black;
+}
+
+.cuerpo-carta{
+    padding-top: 5px;
+}
+
+.fav{
+    position: relative;
+    top: 20px;
+    height: 25px;
+    width: 60px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.fav:active{
+    position: relative;
+    top: 23px;
+}

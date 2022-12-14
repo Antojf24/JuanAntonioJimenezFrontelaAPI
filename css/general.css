@@ -1,0 +1,15 @@
+@import url(cabezera.css);
+@import url(main.css);
+@import url(pie.css);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f8f9f8;
+    width: 100vw;
+    overflow-x: hidden;
+}
