@@ -9,7 +9,7 @@ const escritor = document.querySelector('.escritor');
 const contenidoNotas = document.querySelector('.contenidoNotas');
 
 //Evento que recoge lo que escribes en el buscador
-buscador.addEventListener("keyup", (f) =>{
+buscador.addEventListener("blur", (f) =>{
     let busqueda = f.target.value;
     busquedaPorBuscador(busqueda);
 });
@@ -20,12 +20,14 @@ buscador.addEventListener("keyup", (f) =>{
  */
 function busquedaPorBuscador(busqueda){
     limpiar();
-
-    for(let monstruo of arrayMonstruos){
-        if(monstruo.name.toLowerCase().includes(busqueda.toLowerCase())){
-            crearMonster(monstruo);
-        }
-    }
+    const url = new URL(`https://mhw-db.com/monsters?q={"name":"${busqueda}"}`);
+    fetch(url)
+        .then(response => response.json())
+        .then(monstruos => {
+            for( i = 0; i < monstruos.length; i++){
+                crearMonster(monstruos[i]);
+            }
+        });
 }
 
 /**
